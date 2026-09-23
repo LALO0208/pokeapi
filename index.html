@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+    <title>ejemplo vue</title>
+</head>
+<body>
+    <div id="app">
+        {{saludo}}
+        <button @click="aumentarVariable">Aumentar</button>
+        <label for="">La cuenta es: {{cuenta}}</label><br>
+        <button @click="disminuirVariable">disminuir</button><br>
+        <button @click="cambiarDiv">Mostrar/ocultar</button>
+        <div v-if="visible" class="cuadro"> hola lalo</div><br>
+         
+        <label for="">Nombre de usuario</label><br>
+        <input type="text" v-model="nombre" placeholder="Introduce tu Nombre">
+        <p>{{nombre}}</p>
+
+        <label for="">Introduce tu contraseña</label><br>
+        <input type="password" v-model="password" placeholder="Introduce tu Contraseña" 
+        @change="verificarPassword">
+        <p>{{password}}</p>
+        <ul>
+            <li v_if="validacion_letrasMayuscula_visible">Debe tener una letra mayúscula</li>
+            <li>Debe tener un caracter especial</li>
+        </ul>
+
+        <button @click="enviarDatos">Enviar</button>
+    </div>
+    <script src="js/vue.global.js"></script>
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
